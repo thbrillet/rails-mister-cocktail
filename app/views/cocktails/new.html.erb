@@ -1,0 +1,34 @@
+<div class="container-cocktailnew">
+
+
+  <div class="form-cocktailnew">
+    <h1>Cocktails#new</h1>
+    <%= simple_form_for [@cocktail] do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :name %>
+      <%= f.association :ingredients %>
+
+      <%= f.simple_fields_for :doses do |d| %>
+      <%= d.input :description1 %>
+      <% end %>
+
+      <%= f.association :ingredients %>
+      <%= f.simple_fields_for :doses do |d| %>
+        <%= d.input :description2 %>
+      <% end %>
+
+      <%= f.association :ingredients %>
+      <%= f.simple_fields_for :doses do |d| %>
+        <%= d.input :description3 %>
+      <% end %>
+
+      <%= f.association :ingredients %>
+      <%= f.simple_fields_for :doses do |d| %>
+        <%= d.input :description4 %>
+      <% end %>
+
+      <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+  </div>
+</div>
