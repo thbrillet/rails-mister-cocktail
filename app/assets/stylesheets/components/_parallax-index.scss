@@ -1,45 +1,46 @@
 .hero{
-  height: 600px;
+  height: 80vh;
   position: relative;
   background-image: url(/assets/bg-index.jpg);
-  background-size: contain;
-  background-position: top left;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   overflow: hidden;
 }
 
-.main-el{
-  height: 100px;
-  width: 100%;
-  // background-image: url(/assets/olive.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  margin-top: -50px;
-}
+// .main-el{
+//   background-color: transparantize(pink, 0.5);
+//   background-image: url(/assets/bg-front-small.png);
+//   height: 733px;
+//   width: 100%;
+//   background-position: right top;
+//   background-repeat: no-repeat;
+//   position: absolute;
+//   top: 200px;
+//   margin-right: -900px;
+// }
 
-.fore-el{
-  background-color: transparantize(pink, 0.5);
-  // background-image: url(/assets/liquid.png);
-  height: 733px;
-  width: 960px;
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 380px;
-  margin-left: -480px;
-}
+// .fore-el{
+//   background-color: transparantize(pink, 0.5);
+//   background-image: url(/assets/bg-middle-small.png);
+//   height: 733px;
+//   width: 100%;
+//   background-position: right top;
+//   background-repeat: no-repeat;
+//   position: absolute;
+//   top: 380px;
+//   margin-right: 100px;
+// }
 
-.back-el{
-  width: 960px;
-  height: 298px;
-  // background-image: url(/assets/liquid.png);
-  background-repeat: no-repeat;
-  background-position: top left;
-  position: absolute;
-  left: 50%;
-  margin-left: -480px;
-}
+// .back-el{
+//   width: 960px;
+//   height: 298px;
+//   background-image: url(/assets/bg-middle-front.png);
+//   background-repeat: no-repeat;
+//   background-position: top left;
+//   position: absolute;
+//   left: 50%;
+//   margin-left: -480px;
+// }
 
