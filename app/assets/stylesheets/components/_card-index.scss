@@ -22,9 +22,8 @@ width: 70%;
   width: 400px;
   height: 250px;
   position: relative;
-  background-image: url(https://www.framboizeinthekitchen.com/wp-content/uploads/2018/04/gin-tonic-fraise-1-1024x640.jpg);
   border-radius: 20px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0);
   background-size: 110% auto;
   background-position: center;
   transition: .5s;
@@ -49,12 +48,22 @@ width: 70%;
   h3{
     color: white;
     font_size: 22px;
+    opacity: 0;
+    transition: .5s;
+  }
+  &:hover h3 {
+    font-size: 45px;
+    opacity: 1;
+    transition: .5s;
+    padding-top: 20px;
   }
 }
 
-.img-splash{
-  height: 300px;
-  width: 100%;
-  background-image: url(/assets/splash-black.png);
-  background-size: cover;
-}
+// .img-splash{
+//   height: 300px;
+//   width: 100%;
+//   background-image: url(/assets/splash-black.png);
+//   background-size: cover;
+// }
+
+

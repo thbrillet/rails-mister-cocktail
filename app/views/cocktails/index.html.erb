@@ -1,28 +1,41 @@
 <header class="hero">
-  <div class="back-el"></div>
-  <div class="main-el"></div>
-  <div class="fore-el"></div>
 </header>
 
-<!-- <div class="liquid-top">
-  <img src="/assets/bg-white.png" alt="">
-</div> -->
 
 
+
+
+<div class="liquid-top">
+<!--   <img src="/assets/splash-black.png" alt=""> -->
+</div>
 <div class="wrapper-index">
   <div class="container-index">
     <h1>Cocktails#index</h1>
       <div class="cards-cocktail">
         <% @cocktails.each do |cocktail| %>
-          <div class="card-cocktail">
-            <%= link_to cocktail_path(cocktail) do %>
-              <div class="layer">
-                <h3> <%= cocktail.name %> </h3>
-              </div>
-            <% end %>
-          </div>
+          <% if cocktail.photo.url.nil? %>
+            <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('https://www.atelierdeschefs.com/media/recette-e7517-cocktail-blue-lagoon.jpg')">
+              <%= link_to cocktail_path(cocktail) do %>
+                <div class="layer">
+                  <h3> <%= cocktail.name %> </h3>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+              <%= link_to cocktail_path(cocktail) do %>
+                <div class="layer">
+                  <h3> <%= cocktail.name %> </h3>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <%= link_to "Add a new cocktail", new_cocktail_path %>
   </div>
 </div>
+
+
+
+
