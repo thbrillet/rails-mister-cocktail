@@ -1,11 +1,27 @@
-<h1>Cocktails#index</h1>
+<header class="hero">
+  <div class="back-el"></div>
+  <div class="main-el"></div>
+  <div class="fore-el"></div>
+<!-- <div class="liquid-top">
+  <img src="/assets/bg-white.png" alt="">
+</div> -->
+</header>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <div class="card-cocktail">
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </div>
-  <% end %>
-</ul>
 
-<%= link_to "Add a new cocktail", new_cocktail_path %>
+<div class="wrapper-index">
+  <div class="container-index">
+    <h1>Cocktails#index</h1>
+      <div class="cards-cocktail">
+        <% @cocktails.each do |cocktail| %>
+          <div class="card-cocktail">
+            <%= link_to cocktail_path(cocktail) do %>
+              <div class="layer">
+                <h3> <%= cocktail.name %> </h3>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <%= link_to "Add a new cocktail", new_cocktail_path %>
+  </div>
+</div>

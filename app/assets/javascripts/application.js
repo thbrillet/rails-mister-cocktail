@@ -15,5 +15,3 @@
 //= require turbolinks
 //= require_tree .
 
-// app/javascript/packs/application.js
-import 'bootstrap';
