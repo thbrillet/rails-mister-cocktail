@@ -10,23 +10,11 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
-    @cocktail.doses.build
+    4.times { @cocktail.doses.build }
   end
 
   def create
-
     @cocktail = Cocktail.new(cocktail_params)
-    raise
-    cocktail_params[:ingredient_ids].each do |ingredient_id|
-      unless ingredient_id == ""
-       i = Ingredient.find(ingredient_id)
-       d1 = Dose.new
-       d1.description = @cocktail.doses.description1
-       # d1.cocktail = ...
-       # d1.ingredient =
-
-      end
-    end
 
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
@@ -52,6 +40,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :ingredient_ids, :doses, :photo)
+    params.require(:cocktail).permit(:name, :photo, doses_attributes: [:ingredient_id, :description])
   end
 end

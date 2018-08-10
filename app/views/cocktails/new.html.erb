@@ -7,28 +7,12 @@
       <%= f.error_notification %>
 
       <%= f.input :name %>
-      <%= f.association :ingredients %>
-
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
 
-      <%= f.simple_fields_for :doses do |d| %>
-      <%= d.input :description1 %>
-      <% end %>
-
-      <%= f.association :ingredients %>
-      <%= f.simple_fields_for :doses do |d| %>
-        <%= d.input :description2 %>
-      <% end %>
-
-      <%= f.association :ingredients %>
-      <%= f.simple_fields_for :doses do |d| %>
-        <%= d.input :description3 %>
-      <% end %>
-
-      <%= f.association :ingredients %>
-      <%= f.simple_fields_for :doses do |d| %>
-        <%= d.input :description4 %>
+      <%= f.simple_fields_for :doses do |dose_form| %>
+        <%= dose_form.association :ingredient %>
+        <%= dose_form.input :description %>
       <% end %>
 
       <%= f.button :submit, class: "btn-primary" %>
